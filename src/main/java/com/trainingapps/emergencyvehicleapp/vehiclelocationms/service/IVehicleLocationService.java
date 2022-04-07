@@ -1,7 +1,6 @@
 package com.trainingapps.emergencyvehicleapp.vehiclelocationms.service;
-
-import com.trainingapps.emergencyvehicleapp.vehiclelocationms.constants.CourseType;
 import com.trainingapps.emergencyvehicleapp.vehiclelocationms.dto.AddVehicleLocationRequest;
+import com.trainingapps.emergencyvehicleapp.vehiclelocationms.dto.UpdateVehicleLocation;
 import com.trainingapps.emergencyvehicleapp.vehiclelocationms.dto.VehicleLocationDetails;
 import com.trainingapps.emergencyvehicleapp.vehiclelocationms.entity.VehicleLocation;
 import com.trainingapps.emergencyvehicleapp.vehiclelocationms.exceptions.InvalidStudentAgeException;
@@ -21,7 +20,7 @@ import java.util.List;
 public interface IVehicleLocationService {
     VehicleLocationDetails add(@Valid AddVehicleLocationRequest requestData);
 
-    VehicleLocationDetails update(@Valid AddVehicleLocationRequest requestData) throws Exception;
+    VehicleLocationDetails update(@Valid UpdateVehicleLocation requestData) throws Exception;
     
     VehicleLocationDetails findVehicleLocationDetailsByVehicleNumber(@NotNull String vehicleNumber) throws VehicleNotFound;
 

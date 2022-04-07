@@ -1,6 +1,6 @@
 package com.trainingapps.emergencyvehicleapp.vehiclelocationms.entity;
 
-import com.trainingapps.emergencyvehicleapp.vehiclelocationms.constants.CourseType;
+
 
 import javax.persistence.*;
 import java.util.Objects;
@@ -12,7 +12,7 @@ public class VehicleLocation {
     @GeneratedValue
     @Id
     private Long id;
-    
+    @Column(unique=true)
     private String vehicleNumber;
     private Long requestId;
     private Long pincode;

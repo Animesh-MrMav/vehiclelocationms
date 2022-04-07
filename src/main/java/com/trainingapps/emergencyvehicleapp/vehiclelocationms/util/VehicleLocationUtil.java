@@ -1,6 +1,6 @@
 package com.trainingapps.emergencyvehicleapp.vehiclelocationms.util;
 
-import com.trainingapps.emergencyvehicleapp.vehiclelocationms.constants.CourseType;
+
 import com.trainingapps.emergencyvehicleapp.vehiclelocationms.dto.VehicleLocationDetails;
 import com.trainingapps.emergencyvehicleapp.vehiclelocationms.entity.VehicleLocation;
 import org.springframework.stereotype.Component;

@@ -4,17 +4,14 @@ import com.trainingapps.emergencyvehicleapp.vehiclelocationms.entity.VehicleLoca
 
 import java.util.List;
 
-public interface IVehicleLocationRepository {
+import org.springframework.data.jpa.repository.JpaRepository;
 
-    void add(VehicleLocation student);
+public interface IVehicleLocationRepository extends JpaRepository<VehicleLocation,Long>
+{
+	   
+	    VehicleLocation findByVehicleNumber(String vehicleNumber);
 
-    VehicleLocation findVehicleLocationById(Long id);
-    
-    VehicleLocation findVehicleLocationByVehicleNumber(String vehicleNumber);
-    
-    void deleteVehicleLocationById(Long id);
+	    
 
-    List<VehicleLocation>findAll();
-
-
+	   
 }

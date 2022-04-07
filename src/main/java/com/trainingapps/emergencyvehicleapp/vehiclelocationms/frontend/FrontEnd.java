@@ -2,7 +2,7 @@ package com.trainingapps.emergencyvehicleapp.vehiclelocationms.frontend;
 
 import java.util.*;
 
-import com.trainingapps.emergencyvehicleapp.vehiclelocationms.constants.CourseType;
+
 import com.trainingapps.emergencyvehicleapp.vehiclelocationms.dto.AddVehicleLocationRequest;
 import com.trainingapps.emergencyvehicleapp.vehiclelocationms.dto.VehicleLocationDetails;
 import com.trainingapps.emergencyvehicleapp.vehiclelocationms.entity.VehicleLocation;
@@ -28,14 +28,14 @@ public class FrontEnd {
             requestData1.setVehicleNumber("UP32XX0007");
             requestData1.setPincode(226003L);
             requestData1.setRequestId(100000L);
-            requestData1.setServingRequest(true);
+            requestData1.setServingRequest("true");
             VehicleLocationDetails vl1 = service.add(requestData1);
             
             AddVehicleLocationRequest requestData2 = new AddVehicleLocationRequest();
             requestData2.setVehicleNumber("UP32XX0786");
             requestData2.setPincode(201206L);
             requestData2.setRequestId(100001L);
-            requestData2.setServingRequest(false);
+            requestData2.setServingRequest("false");
             VehicleLocationDetails vl2 = service.add(requestData2);
             
             display(vl1);
@@ -51,12 +51,16 @@ public class FrontEnd {
             VehicleLocationDetails found1 = service.findVehicleLocationDetailsByVehicleNumber(vl2vn);
             display(found);
             
+            System.out.println("****displaying all elements in store");
+            List<VehicleLocationDetails> all = service.findAll();
+            displayAll(all);
+            
             System.out.println("****delete student by id");
             service.deleteVehicleLocationById(vl1Id);
             
             System.out.println("****displaying all elements in store");
-            List<VehicleLocationDetails> all = service.findAll();
-            displayAll(all);
+            List<VehicleLocationDetails> all1 = service.findAll();
+            displayAll(all1);
         }  catch (VehicleNotFound e) {
             //e.printStackTrace();
             System.err.println(e.getMessage());

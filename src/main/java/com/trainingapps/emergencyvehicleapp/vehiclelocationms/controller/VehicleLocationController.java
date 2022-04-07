@@ -1,7 +1,7 @@
 package com.trainingapps.emergencyvehicleapp.vehiclelocationms.controller;
 
-import com.trainingapps.emergencyvehicleapp.vehiclelocationms.constants.CourseType;
 import com.trainingapps.emergencyvehicleapp.vehiclelocationms.dto.AddVehicleLocationRequest;
+import com.trainingapps.emergencyvehicleapp.vehiclelocationms.dto.UpdateVehicleLocation;
 import com.trainingapps.emergencyvehicleapp.vehiclelocationms.dto.VehicleLocationDetails;
 import com.trainingapps.emergencyvehicleapp.vehiclelocationms.entity.VehicleLocation;
 import com.trainingapps.emergencyvehicleapp.vehiclelocationms.exceptions.InvalidStudentAgeException;
@@ -33,6 +33,13 @@ public class VehicleLocationController {
     @PostMapping(value = "/add")
     public VehicleLocationDetails add(@RequestBody AddVehicleLocationRequest requestData) throws Exception {
         VehicleLocationDetails response = service.add(requestData);
+        return response;
+    }
+    
+    @ResponseStatus(HttpStatus.CREATED)
+    @PostMapping(value = "/update")
+    public VehicleLocationDetails update(@RequestBody UpdateVehicleLocation requestData) throws Exception {
+        VehicleLocationDetails response = service.update(requestData);
         return response;
     }
     

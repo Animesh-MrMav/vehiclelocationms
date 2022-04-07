@@ -1,30 +1,21 @@
 package com.trainingapps.emergencyvehicleapp.vehiclelocationms.dto;
 
-import org.hibernate.validator.constraints.Length;
-
-import javax.validation.constraints.Max;
-import javax.validation.constraints.Min;
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
-
-public class AddVehicleLocationRequest {
-	    
-	 
+public class UpdateVehicleLocation
+{
+	    private Long id;
 	    private String vehicleNumber;
 	    private Long requestId;
 	    private Long pincode;
 	    private String servingRequest;
-		
-	    public AddVehicleLocationRequest()
-	    {}
-	    
-	   
-	    
-	    
-	    public String getVehicleNumber() {
+		public Long getId() {
+			return id;
+		}
+		public void setId(Long id) {
+			this.id = id;
+		}
+		public String getVehicleNumber() {
 			return vehicleNumber;
 		}
-		
 		public void setVehicleNumber(String vehicleNumber) {
 			this.vehicleNumber = vehicleNumber;
 		}
@@ -40,13 +31,12 @@ public class AddVehicleLocationRequest {
 		public void setPincode(Long pincode) {
 			this.pincode = pincode;
 		}
-		public String isServingRequest() {
+		public String getServingRequest() {
 			return servingRequest;
 		}
 		public void setServingRequest(String servingRequest) {
 			this.servingRequest = servingRequest;
 		}
-
-
-    
+	    
+	    
 }
