@@ -3,9 +3,6 @@ import com.trainingapps.emergencyvehicleapp.vehiclelocationms.dto.AddVehicleLoca
 import com.trainingapps.emergencyvehicleapp.vehiclelocationms.dto.UpdateVehicleLocation;
 import com.trainingapps.emergencyvehicleapp.vehiclelocationms.dto.VehicleLocationDetails;
 import com.trainingapps.emergencyvehicleapp.vehiclelocationms.entity.VehicleLocation;
-import com.trainingapps.emergencyvehicleapp.vehiclelocationms.exceptions.InvalidStudentAgeException;
-import com.trainingapps.emergencyvehicleapp.vehiclelocationms.exceptions.InvalidStudentIdException;
-import com.trainingapps.emergencyvehicleapp.vehiclelocationms.exceptions.InvalidStudentNameException;
 import com.trainingapps.emergencyvehicleapp.vehiclelocationms.exceptions.VehicleNotFound;
 import org.hibernate.validator.constraints.Length;
 import org.springframework.validation.annotation.Validated;
@@ -16,6 +13,7 @@ import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 import java.util.List;
 
+/*Service Interface for business logic*/
 @Validated
 public interface IVehicleLocationService {
     VehicleLocationDetails add(@Valid AddVehicleLocationRequest requestData);

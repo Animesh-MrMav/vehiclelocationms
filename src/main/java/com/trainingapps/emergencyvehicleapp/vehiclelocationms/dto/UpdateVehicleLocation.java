@@ -1,5 +1,7 @@
 package com.trainingapps.emergencyvehicleapp.vehiclelocationms.dto;
 
+/* DTO for update in the database*/
+
 public class UpdateVehicleLocation
 {
 	    private Long id;

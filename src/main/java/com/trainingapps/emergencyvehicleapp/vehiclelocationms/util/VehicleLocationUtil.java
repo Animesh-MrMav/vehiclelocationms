@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
+/* Utility class to perform some handy operations */
 
 @Component
 public class VehicleLocationUtil {

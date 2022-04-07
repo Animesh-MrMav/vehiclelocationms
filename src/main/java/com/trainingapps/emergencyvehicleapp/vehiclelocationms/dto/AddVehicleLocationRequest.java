@@ -7,6 +7,8 @@ import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
+/* DTO or data transfer object for creating in database*/
+
 public class AddVehicleLocationRequest {
 	    
 	 

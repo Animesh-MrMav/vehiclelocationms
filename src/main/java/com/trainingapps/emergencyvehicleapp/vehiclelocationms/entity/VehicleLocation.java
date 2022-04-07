@@ -1,6 +1,6 @@
 package com.trainingapps.emergencyvehicleapp.vehiclelocationms.entity;
 
-
+/* Entity or persistence state of project*/
 
 import javax.persistence.*;
 import java.util.Objects;

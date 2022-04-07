@@ -9,6 +9,7 @@ import org.springframework.context.ConfigurableApplicationContext;
  * @Configuration
  * @ComponentScan
  * @EnableAutoConfiguration
+ * the First File to be run or the main file of the project for gradlew bootRun command.
  *
  */
 @SpringBootApplication

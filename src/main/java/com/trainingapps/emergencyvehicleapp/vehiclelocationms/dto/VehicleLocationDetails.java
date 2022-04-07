@@ -1,5 +1,7 @@
 package com.trainingapps.emergencyvehicleapp.vehiclelocationms.dto;
 
+/* DTO for output data from database*/
+
 public class VehicleLocationDetails 
 {
     private Long id;

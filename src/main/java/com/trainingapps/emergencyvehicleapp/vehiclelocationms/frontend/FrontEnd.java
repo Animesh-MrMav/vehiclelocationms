@@ -2,13 +2,11 @@ package com.trainingapps.emergencyvehicleapp.vehiclelocationms.frontend;
 
 import java.util.*;
 
+/* Front End layer implementation for manual testing */
 
 import com.trainingapps.emergencyvehicleapp.vehiclelocationms.dto.AddVehicleLocationRequest;
 import com.trainingapps.emergencyvehicleapp.vehiclelocationms.dto.VehicleLocationDetails;
 import com.trainingapps.emergencyvehicleapp.vehiclelocationms.entity.VehicleLocation;
-import com.trainingapps.emergencyvehicleapp.vehiclelocationms.exceptions.InvalidStudentAgeException;
-import com.trainingapps.emergencyvehicleapp.vehiclelocationms.exceptions.InvalidStudentIdException;
-import com.trainingapps.emergencyvehicleapp.vehiclelocationms.exceptions.InvalidStudentNameException;
 import com.trainingapps.emergencyvehicleapp.vehiclelocationms.exceptions.VehicleNotFound;
 import com.trainingapps.emergencyvehicleapp.vehiclelocationms.service.IVehicleLocationService;
 import com.trainingapps.emergencyvehicleapp.vehiclelocationms.service.VehicleLocationServiceImpl;

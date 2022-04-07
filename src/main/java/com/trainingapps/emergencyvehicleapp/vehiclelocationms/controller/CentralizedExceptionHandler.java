@@ -22,9 +22,7 @@ public class CentralizedExceptionHandler {
 
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     @ExceptionHandler({
-            InvalidStudentAgeException.class,
-            InvalidStudentIdException.class,
-            InvalidStudentNameException.class,
+           
             MethodArgumentNotValidException.class,
             ConstraintViolationException.class
     })

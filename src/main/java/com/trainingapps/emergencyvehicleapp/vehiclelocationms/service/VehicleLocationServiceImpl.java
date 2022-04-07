@@ -16,6 +16,8 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 import java.util.Optional;
 
+/* Business Logic implementation in service layer.*/
+
 @Transactional
 @Service
 public class VehicleLocationServiceImpl implements IVehicleLocationService {
@@ -32,7 +34,7 @@ public class VehicleLocationServiceImpl implements IVehicleLocationService {
         vl.setVehicleNumber(request.getVehicleNumber());
         vl.setRequestId(request.getRequestId());
         vl.setPincode(request.getPincode());
-        boolean b= Boolean.valueOf((request.isServingRequest()));
+        boolean b= Boolean.parseBoolean((request.isServingRequest()));
         vl.setServingRequest(b);
         VehicleLocation des=repository.save(vl);
         VehicleLocationDetails desired=vutil.toVehicleLocationDetails(des);
@@ -40,33 +42,19 @@ public class VehicleLocationServiceImpl implements IVehicleLocationService {
     }
      
     @Override
-    public VehicleLocationDetails update(UpdateVehicleLocation request) throws Exception {
-        VehicleLocation vl1 =findVehicleLocationById(request.getId());
-        if(vl1==null)
-        {    /* VehicleLocation vl = new VehicleLocation();
-              vl.setVehicleNumber(request.getVehicleNumber());
-              vl.setRequestId(request.getRequestId());
-              vl.setPincode(request.getPincode());
-              boolean b= Boolean.valueOf((request.getServingRequest()));
-              vl.setServingRequest(b);
-        	  vl=repository.save(vl);
-        	  VehicleLocationDetails desired=vutil.toVehicleLocationDetails(vl);
-        	  return desired ; */
-        	 throw new VehicleNotFound("the vehicle record trying to update doesnt exist");
-        }
-        else
-        { deleteVehicleLocationById(vl1.getId());
-          VehicleLocation vl2=new VehicleLocation();
-          vl2.setVehicleNumber(request.getVehicleNumber());
-          vl2.setRequestId(request.getRequestId());
-          vl2.setPincode(request.getPincode());
-          boolean b= Boolean.valueOf((request.getServingRequest()));
-          vl2.setServingRequest(b);
-    	  vl2=repository.save(vl2);
-          VehicleLocationDetails desired=vutil.toVehicleLocationDetails(vl2);
-          return desired; 
-          }
-    }  
+    public VehicleLocationDetails update(UpdateVehicleLocation request) throws Exception
+    {
+        VehicleLocation vl=new VehicleLocation();
+        vl.setId(request.getId());
+        vl.setVehicleNumber(request.getVehicleNumber());
+        vl.setRequestId(request.getRequestId());
+        vl.setPincode(request.getPincode());
+        boolean b= Boolean.valueOf((request.getServingRequest()));
+        vl.setServingRequest(b);
+  	    vl=repository.save(vl);
+        return vutil.toVehicleLocationDetails(vl);
+    	
+     }  
 
     @Override
     public VehicleLocationDetails findVehicleLocationDetailsByVehicleNumber( String vehicleNumber) throws VehicleNotFound {
@@ -87,10 +75,7 @@ public class VehicleLocationServiceImpl implements IVehicleLocationService {
         VehicleLocationDetails desired=vutil.toVehicleLocationDetails(optional.get());
         return desired;
     }
-    public VehicleLocation findVehicleLocationById(Long id) throws VehicleNotFound {
-        Optional<VehicleLocation> optional=repository.findById(id);
-        return optional.get();
-     }
+   
 
     @Override
     public void deleteVehicleLocationById(Long id)  {

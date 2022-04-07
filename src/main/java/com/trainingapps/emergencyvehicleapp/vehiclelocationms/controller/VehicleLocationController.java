@@ -4,7 +4,6 @@ import com.trainingapps.emergencyvehicleapp.vehiclelocationms.dto.AddVehicleLoca
 import com.trainingapps.emergencyvehicleapp.vehiclelocationms.dto.UpdateVehicleLocation;
 import com.trainingapps.emergencyvehicleapp.vehiclelocationms.dto.VehicleLocationDetails;
 import com.trainingapps.emergencyvehicleapp.vehiclelocationms.entity.VehicleLocation;
-import com.trainingapps.emergencyvehicleapp.vehiclelocationms.exceptions.InvalidStudentAgeException;
 import com.trainingapps.emergencyvehicleapp.vehiclelocationms.exceptions.VehicleNotFound;
 import com.trainingapps.emergencyvehicleapp.vehiclelocationms.service.IVehicleLocationService;
 import com.trainingapps.emergencyvehicleapp.vehiclelocationms.util.VehicleLocationUtil;
@@ -15,6 +14,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+/* Controller Class for manual testing from POSTMAN */
 
 @RequestMapping("/vehiclelocation")
 @RestController
